@@ -14,7 +14,7 @@ import java.util.UUID;
 public class BlobStorage {
     private BlobServiceClient blobServiceClient;
 
-    public BlobStorage(Environment env) {
+    public BlobStorage() {
         blobServiceClient = new BlobServiceClientBuilder().connectionString("").buildClient();
     }
 
