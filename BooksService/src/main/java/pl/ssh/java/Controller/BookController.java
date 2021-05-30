@@ -27,15 +27,14 @@ public class BookController {
     }
 
     @GetMapping("/get")
-    public List<Book> getAllBooks(){
+    public List<Book> getAllBooks() {
         return bookRepository.findAll();
     }
 
     @GetMapping("/get/{id}")
-    public Book getBookById(@ModelAttribute("id") UUID id){
+    public Book getBookById(@ModelAttribute("id") UUID id) {
         var book = bookRepository.findById(id);
-
-        if(book.isPresent()){
+        if (book.isPresent()) {
             return book.get();
         }
 
@@ -45,13 +44,14 @@ public class BookController {
     }
 
     @PostMapping("/create")
-    public UUID createBook(@RequestBody Book book){
-        var stream = bookService.convertFileContentToStream(book.fileContent);
-
-        try {
-            book.cover = blobStorage.uploadFile(book.filename, stream, stream.available());
-        } catch (IOException e) {
-            e.printStackTrace();
+    public UUID createBook(@RequestBody Book book) {
+        if (book.filename != null && book.fileContent != null) {
+            var stream = bookService.convertFileContentToStream(book.fileContent);
+            try {
+                book.cover = blobStorage.uploadFile(book.filename, stream, stream.available());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
         var createdBook = bookRepository.save(book);
@@ -59,17 +59,20 @@ public class BookController {
     }
 
     @PostMapping("/update")
-    public UUID updateBook(@RequestBody Book book){
+    public UUID updateBook(@RequestBody Book book) {
         var currentBook = bookRepository.findById(book.id);
-        if (currentBook.isPresent()){
+        if (currentBook.isPresent()) {
             bookRepository.save(book);
             return book.id;
         }
-        return null;
+
+        throw new ResponseStatusException(
+                HttpStatus.NOT_FOUND, "Entity does not exist!"
+        );
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteBook(@ModelAttribute("id") UUID id){
+    public void deleteBook(@ModelAttribute("id") UUID id) {
         var book = bookRepository.findById(id);
         book.ifPresent(bookRepository::delete);
     }

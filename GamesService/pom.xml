@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>pl.ssh</groupId>
-    <artifactId>java</artifactId>
-    <version>1.0.0</version>
-    <name>BooksService</name>
-    <description>Books service for java course</description>
+    <artifactId>GamesService</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>GamesService</name>
+    <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>11</java.version>
     </properties>

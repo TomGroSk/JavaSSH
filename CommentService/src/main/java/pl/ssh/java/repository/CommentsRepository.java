@@ -23,7 +23,7 @@ public class CommentsRepository {
     public CommentsRepository() {
         CloudStorageAccount storageAccount = null;
         try {
-            storageAccount = CloudStorageAccount.parse("");
+            storageAccount = CloudStorageAccount.parse("DefaultEndpointsProtocol=https;AccountName=javasa;AccountKey=MDcvLrbLqeciw8nu7nXqaJeTyjtERUikZlx2ddPV+/x3+5G4Jkkk+5WWvbg5O5bLxO/y4QwZyO7mLiIsLsSrEw==;EndpointSuffix=core.windows.net");
         } catch (URISyntaxException | InvalidKeyException e) {
             e.printStackTrace();
         }

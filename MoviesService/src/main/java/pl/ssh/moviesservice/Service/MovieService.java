@@ -1,4 +1,4 @@
-package pl.ssh.java.Service;
+package pl.ssh.moviesservice.Service;
 
 import org.springframework.stereotype.Service;
 
@@ -7,7 +7,7 @@ import java.io.InputStream;
 import java.util.Base64;
 
 @Service
-public class BookService {
+public class MovieService {
     public InputStream convertFileContentToStream(String fileContent) {
         byte[] decoded = Base64.getDecoder().decode(fileContent);
         return new ByteArrayInputStream(decoded);

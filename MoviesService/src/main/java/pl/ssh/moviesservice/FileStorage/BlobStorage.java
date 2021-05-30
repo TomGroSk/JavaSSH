@@ -1,4 +1,4 @@
-package pl.ssh.java.FileStorage;
+package pl.ssh.moviesservice.FileStorage;
 
 import com.azure.storage.blob.BlobClient;
 import com.azure.storage.blob.BlobContainerClient;
@@ -18,7 +18,7 @@ public class BlobStorage {
     }
 
     public String uploadFile(String fileName, InputStream stream, Integer size) {
-        BlobContainerClient containerClient = blobServiceClient.getBlobContainerClient("books");
+        BlobContainerClient containerClient = blobServiceClient.getBlobContainerClient("movies");
 
         var split = fileName.split("\\.");
         String extension = split[split.length - 1];
