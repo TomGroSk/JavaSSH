@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SSH Portal</title>
+    <link href="../static/css/index.css" th:href="@{/css/index.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+<div class="header">
+    <div class="top-panel col-md-12 col-xs-12">
+        <a sec:authorize="isAuthenticated()" class="header-link pull-left home" href="/list">MY LIST</a>
+        <a sec:authorize="isAuthenticated()" class="header-link pull-left home" href="/books">BOOKS</a>
+        <a sec:authorize="isAuthenticated()" class="header-link pull-left home" href="/movies">MOVIES</a>
+        <a sec:authorize="isAuthenticated()" class="header-link pull-left home" href="/games">GAMES</a>
+
+        <a class="header-link pull-right  display-none-xs" sec:authorize="isAuthenticated()" href="/logout">LOGOUT</a>
+        <a sec:authorize="!isAuthenticated()" class="header-link pull-right display-none-xs"
+           href="/register">REGISTER</a>
+        <a sec:authorize="!isAuthenticated()" class="header-link pull-right display-none-xs" href="/login">LOGIN</a>
+        <a class="header-link pull-right  display-none-xs" sec:authorize="hasAuthority('ADMIN')" href="/panel">PANEL</a>
+
+        <div id="mySidebar" class="display-none-lg sidebar">
+            <a href="javascript:void(0)" class="closebtn pull-right" onclick="closeNav()">&times;</a>
+            <a class="header-link pull-right" sec:authorize="isAuthenticated()" href="/logout">LOGOUT</a>
+            <a class="header-link pull-right" sec:authorize="hasAuthority('ADMIN')" href="/panel">PANEL</a>
+        </div>
+
+        <div id="open-menu" class="display-none-lg pull-right">
+            <span class="openbtn" onclick="openNav()">&#9776;</span>
+        </div>
+
+    </div>
+</div>
+
+<div class="text-hover col-md-12 col-xs-12 m-t-100">
+    <div class="col-md-12 col-xs-12" sec:authorize="!isAuthenticated()">Please register and log in!
+    </div>
+    <div class="col-md-12 col-xs-12" sec:authorize="isAuthenticated()">
+        <div class="col-md-12 col-xs-12">
+            <div class="display-container" th:each="book: ${items.books}">
+                <div class="col-xs-12 col-md-12  margin-bottom-20">
+                    <div class="pull-left col-xs-6 col-md-6">
+                        <span th:text="${book.title}">Title</span>
+                    </div>
+
+                    <div class="pull-right col-xs-6 col-md-6">
+                        <span th:text="${book.author}">Author</span>
+                    </div>
+                </div>
+            </div>
+            <div class="display-container" th:each="movie: ${items.movies}">
+                <div class="col-xs-12 col-md-12  margin-bottom-20">
+                    <div class="pull-left col-xs-6 col-md-6">
+                        <span th:text="${movie.title}">Title</span>
+                    </div>
+
+                    <div class="pull-right col-xs-6 col-md-6">
+                        <span th:text="${movie.author}">Author</span>
+                    </div>
+                </div>
+            </div>
+            <div class="display-container" th:each="game: ${items.games}">
+                <div class="col-xs-12 col-md-12  margin-bottom-20">
+                    <div class="pull-left col-xs-6 col-md-6">
+                        <span th:text="${game.title}">Title</span>
+                    </div>
+
+                    <div class="pull-right col-xs-6 col-md-6">
+                        <span th:text="${game.author}">Author</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "100%";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+    }
+</script>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spittles - registration</title>
+    <link href="../static/css/register.css" th:href="@{/css/register.css}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+<div class="header">
+    <div class="top-panel col-md-12 col-xs-12">
+        <a class="header-link pull-left home" href="/">HOME</a>
+
+        <a class="header-link pull-right display-none-xs" sec:authorize="!isAuthenticated()" href="/login">LOGIN</a>
+        <a class="header-link pull-right display-none-xs" sec:authorize="hasAuthority('ADMIN')" href="/panel">PANEL</a>
+
+
+        <div id="mySidebar" class="display-none-lg sidebar">
+            <a href="javascript:void(0)" class="closebtn pull-right" onclick="closeNav()">&times;</a>
+            <a class="header-link pull-right" sec:authorize="isAuthenticated()" href="/logout">LOGOUT</a>
+            <a class="header-link pull-right" sec:authorize="hasAuthority('ADMIN')" href="/panel">PANEL</a>
+        </div>
+
+        <div id="open-menu" class="display-none-lg pull-right">
+            <span class="openbtn" onclick="openNav()">&#9776;</span>
+        </div>
+    </div>
+</div>
+
+<form action="#" th:action="@{/register}" th:object="${newUser}" method="post" class="form-signin col-md-12 col-xs-12"
+      role="form">
+    <div class="form-signin-heading col-md-12 col-xs-12">REGISTRATION</div>
+    <!--            <div>-->
+    <!--                <a style="color: white" th:if="${#fields.hasErrors('username')}">Name must be filled!</a>-->
+    <!--                <a style="color: white" th:if="${#fields.hasErrors('password')}">Password must be filled!</a>-->
+    <!--                <a style="color: white" th:if="${#fields.hasErrors('rePassword')}">Incorrect password confirm!</a>-->
+    <!--            </div>-->
+
+
+    <div class="form-group col-xs-12 col-md-12">
+
+        <div class="m-b-10 register-field">
+            <input class="form-control" type="text" th:field="*{username}" placeholder="Login"/>
+            <div>
+                <a style="color: red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></a>
+            </div>
+        </div>
+
+        <div class="m-b-10 register-field">
+            <input class="form-control" type="password" th:field="*{password}" placeholder="Password"/>
+            <div>
+                <a style="color: red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></a>
+            </div>
+        </div>
+
+
+        <div class="m-b-10 register-field">
+            <input class="form-control" type="password" th:field="*{rePassword}" placeholder="Confirm password"/>
+            <div>
+                <a style="color: red" th:if="${#fields.hasErrors('rePassword')}" th:errors="*{rePassword}"></a>
+            </div>
+        </div>
+
+
+        <div class="form-group register-button">
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+        </div>
+    </div>
+</form>
+</body>
+</html>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "100%";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+    }
+</script>
