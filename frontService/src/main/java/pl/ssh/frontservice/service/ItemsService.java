@@ -2,6 +2,7 @@ package pl.ssh.frontservice.service;
 
 import org.springframework.stereotype.Service;
 import pl.ssh.frontservice.config.ProxyConfig;
+import pl.ssh.frontservice.model.Item;
 import pl.ssh.frontservice.model.ItemResponse;
 import pl.ssh.frontservice.model.dto.Book;
 import pl.ssh.frontservice.model.dto.Game;
@@ -136,5 +137,13 @@ public class ItemsService {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public Item getItem(Long customerId, UUID itemId, String itemType){
+        var items = itemRepository.getAllByCustomer_IdAndItemIdAndItemType(customerId, itemId, itemType);
+        if(items.isEmpty()){
+            return null;
+        }
+        return items.get(0);
     }
 }

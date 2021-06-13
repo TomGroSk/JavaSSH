@@ -3,92 +3,112 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SSH Portal</title>
-    <link href="../static/css/index.css" th:href="@{/css/index.css}" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-</head>
+<head th:replace="/layout :: head">
 
 <body>
-<div class="header">
-    <div class="top-panel col-md-12 col-xs-12">
-        <a sec:authorize="isAuthenticated()" class="header-link pull-left home" href="/list">MY LIST</a>
-        <a sec:authorize="isAuthenticated()" class="header-link pull-left home" href="/books">BOOKS</a>
-        <a sec:authorize="isAuthenticated()" class="header-link pull-left home" href="/movies">MOVIES</a>
-        <a sec:authorize="isAuthenticated()" class="header-link pull-left home" href="/games">GAMES</a>
+<header th:replace="/layout :: header"/>
 
-        <a class="header-link pull-right  display-none-xs" sec:authorize="isAuthenticated()" href="/logout">LOGOUT</a>
-        <a sec:authorize="!isAuthenticated()" class="header-link pull-right display-none-xs"
-           href="/register">REGISTER</a>
-        <a sec:authorize="!isAuthenticated()" class="header-link pull-right display-none-xs" href="/login">LOGIN</a>
-        <a class="header-link pull-right  display-none-xs" sec:authorize="hasAuthority('ADMIN')" href="/panel">PANEL</a>
-
-        <div id="mySidebar" class="display-none-lg sidebar">
-            <a href="javascript:void(0)" class="closebtn pull-right" onclick="closeNav()">&times;</a>
-            <a class="header-link pull-right" sec:authorize="isAuthenticated()" href="/logout">LOGOUT</a>
-            <a class="header-link pull-right" sec:authorize="hasAuthority('ADMIN')" href="/panel">PANEL</a>
-        </div>
-
-        <div id="open-menu" class="display-none-lg pull-right">
-            <span class="openbtn" onclick="openNav()">&#9776;</span>
-        </div>
-
-    </div>
+<div class="col-md-12 col-xs-12" sec:authorize="!isAuthenticated()">Please register and log in!
 </div>
+<main class="container-fluid" sec:authorize="isAuthenticated()">
 
-<div class="text-hover col-md-12 col-xs-12 m-t-100">
-    <div class="col-md-12 col-xs-12" sec:authorize="!isAuthenticated()">Please register and log in!
-    </div>
-    <div class="col-md-12 col-xs-12" sec:authorize="isAuthenticated()">
-        <div class="col-md-12 col-xs-12">
-            <div class="display-container" th:each="book: ${items.books}">
-                <div class="col-xs-12 col-md-12  margin-bottom-20">
-                    <div class="pull-left col-xs-6 col-md-6">
-                        <span th:text="${book.title}">Title</span>
+    <article class="row justify-content-center">
+        <div class="col-8 mt-3" th:each="book: ${items.books}">
+            <section class="card text-dark bg-light">
+                <div class="card-horizontal" style="display: flex; flex: 1 1 auto">
+                    <div class="img-square-wrapper col-3">
+                        <img class="img-fluid" th:src="${book.cover}" alt="cover" style="height: auto; max-width: 100%">
                     </div>
-
-                    <div class="pull-right col-xs-6 col-md-6">
-                        <span th:text="${book.author}">Author</span>
+                    <div class="card-body">
+                        <h4 class="card-title float-left">
+                            <span class="text-muted">Title: </span>
+                            <span th:text="${book.title}"></span>
+                        </h4>
+                        <h4 class="card-title float-left">
+                            <span class="text-muted">Author: </span>
+                            <span th:text="${book.author}"></span>
+                        </h4>
+                        <p class="card-text" th:text="${book.description}"></p>
+                        <a class="col-3 align-bottom" th:href="@{/books/{id}(id=${book.id})}">
+                            <button class="btn btn-info">Details</button>
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="display-container" th:each="movie: ${items.movies}">
-                <div class="col-xs-12 col-md-12  margin-bottom-20">
-                    <div class="pull-left col-xs-6 col-md-6">
-                        <span th:text="${movie.title}">Title</span>
-                    </div>
-
-                    <div class="pull-right col-xs-6 col-md-6">
-                        <span th:text="${movie.author}">Author</span>
-                    </div>
+                <div class="card-footer">
+                    <small class="text-muted">
+                        <span>published at</span>
+                        <span th:text="${book.publicationDate}"></span>
+                    </small>
                 </div>
-            </div>
-            <div class="display-container" th:each="game: ${items.games}">
-                <div class="col-xs-12 col-md-12  margin-bottom-20">
-                    <div class="pull-left col-xs-6 col-md-6">
-                        <span th:text="${game.title}">Title</span>
-                    </div>
-
-                    <div class="pull-right col-xs-6 col-md-6">
-                        <span th:text="${game.author}">Author</span>
-                    </div>
-                </div>
-            </div>
+            </section>
         </div>
-    </div>
-</div>
+    </article>
+
+    <article class="row justify-content-center">
+        <div class="col-8 mt-3" th:each="movie: ${items.movies}">
+            <section class="card text-dark bg-light">
+                <div class="card-horizontal" style="display: flex; flex: 1 1 auto">
+                    <div class="img-square-wrapper col-3">
+                        <img class="img-fluid" th:src="${movie.cover}" alt="cover" style="height: auto; max-width: 100%">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title float-left">
+                            <span class="text-muted">Title: </span>
+                            <span th:text="${movie.title}"></span>
+                        </h4>
+                        <h4 class="card-title float-left">
+                            <span class="text-muted">Director: </span>
+                            <span th:text="${movie.author}"></span>
+                        </h4>
+                        <p class="card-text" th:text="${movie.description}"></p>
+                        <a class="col-3 align-bottom" th:href="@{/movies/{id}(id=${movie.id})}">
+                            <button class="btn btn-info">Details</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">
+                        <span>released at</span>
+                        <span th:text="${movie.releaseDate}"></span>
+                    </small>
+                </div>
+            </section>
+        </div>
+    </article>
+
+    <article class="row justify-content-center">
+        <div class="col-8 mt-3" th:each="game: ${items.games}">
+            <section class="card text-dark bg-light">
+                <div class="card-horizontal" style="display: flex; flex: 1 1 auto">
+                    <div class="img-square-wrapper col-3">
+                        <img class="img-fluid" th:src="${game.cover}" alt="cover" style="height: auto; max-width: 100%">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title float-left">
+                            <span class="text-muted">Title: </span>
+                            <span th:text="${game.title}"></span>
+                        </h4>
+                        <h4 class="card-title float-left">
+                            <span class="text-muted">Author: </span>
+                            <span th:text="${game.author}"></span>
+                        </h4>
+                        <p class="card-text" th:text="${game.description}"></p>
+                        <a class="col-3 align-bottom" th:href="@{/games/{id}(id=${game.id})}">
+                            <button class="btn btn-info">Details</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">
+                        <span>published at</span>
+                        <span th:text="${game.publicationDate}"></span>
+                    </small>
+                </div>
+            </section>
+        </div>
+    </article>
+
+</main>
+
 </body>
 </html>
-
-<script>
-    function openNav() {
-        document.getElementById("mySidebar").style.width = "100%";
-    }
-
-    function closeNav() {
-        document.getElementById("mySidebar").style.width = "0";
-    }
-</script>

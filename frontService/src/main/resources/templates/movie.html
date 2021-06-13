@@ -1,10 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
+<head th:replace="/layout :: head">
+
+<body>
+<header th:replace="/layout :: header"/>
+
+<main class="container-fluid" sec:authorize="isAuthenticated()">
+    <article class="row justify-content-center">
+        <div class="col-8 mt-3">
+            <section class="card text-dark bg-light">
+                <div class="card-horizontal" style="display: flex; flex: 1 1 auto">
+                    <div class="img-square-wrapper col-4">
+                        <img class="img-fluid" th:src="${movie.cover}" alt="cover" style="height: auto; max-width: 100%">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title float-left">
+                            <span class="text-muted">Title: </span>
+                            <span th:text="${movie.title}"></span>
+                        </h4>
+                        <h4 class="card-title float-left">
+                            <span class="text-muted">Director: </span>
+                            <span th:text="${movie.author}"></span>
+                        </h4>
+                        <h4 class="card-title float-left">
+                            <span class="text-muted">Publisher: </span>
+                            <span th:text="${movie.publisher}"></span>
+                        </h4>
+                        <h4 class="card-title float-left">
+                            <span class="text-muted">Release date: </span>
+                            <span th:text="${movie.releaseDate}"></span>
+                        </h4>
+
+                        <p class="card-text" th:text="${movie.description}"></p>
+
+                        <a class="col-3" th:if="${isInCustomerLibrary}" th:href="@{/movies/{id}(id=${movie.id})}">
+                            <button class="btn btn-danger">Remove from library</button>
+                        </a>
+                        <a class="col-3" th:if="${!isInCustomerLibrary}" th:href="@{/movies/{id}(id=${movie.id})}">
+                            <button class="btn btn-success">Add to library</button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </article>
+</main>
 </body>
 </html>
