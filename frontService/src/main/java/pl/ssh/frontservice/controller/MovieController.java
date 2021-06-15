@@ -5,11 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.ssh.frontservice.config.ProxyConfig;
 import pl.ssh.frontservice.service.CustomerService;
 import pl.ssh.frontservice.service.ItemsService;
 
+import javax.validation.Valid;
 import java.util.UUID;
 
 @Controller
@@ -33,6 +35,8 @@ public class MovieController {
     public String getMovie(Authentication authentication, Model model, @PathVariable UUID id) {
         var movie = itemsService.getMovieById(id);
         model.addAttribute("movie", movie);
+
+        model.addAttribute("comments", itemsService.getAllCommentsByItemId(id));
 
         if(authentication != null)
         {

@@ -34,6 +34,8 @@ public class BookController {
         var book = itemsService.getBookById(id);
         model.addAttribute("book", book);
 
+        model.addAttribute("comments", itemsService.getAllCommentsByItemId(id));
+
         if(authentication != null)
         {
             if(authentication.isAuthenticated()){

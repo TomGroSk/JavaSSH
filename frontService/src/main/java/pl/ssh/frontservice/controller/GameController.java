@@ -34,6 +34,8 @@ public class GameController {
         var game = itemsService.getGameById(id);
         model.addAttribute("game", game);
 
+        model.addAttribute("comments", itemsService.getAllCommentsByItemId(id));
+
         if(authentication != null)
         {
             if(authentication.isAuthenticated()){

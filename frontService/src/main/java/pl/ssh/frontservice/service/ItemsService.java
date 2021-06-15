@@ -5,6 +5,7 @@ import pl.ssh.frontservice.config.ProxyConfig;
 import pl.ssh.frontservice.model.Item;
 import pl.ssh.frontservice.model.ItemResponse;
 import pl.ssh.frontservice.model.dto.Book;
+import pl.ssh.frontservice.model.dto.Comment;
 import pl.ssh.frontservice.model.dto.Game;
 import pl.ssh.frontservice.model.dto.Movie;
 import pl.ssh.frontservice.repository.ItemRepository;
@@ -145,5 +146,17 @@ public class ItemsService {
             return null;
         }
         return items.get(0);
+    }
+
+    public List<Comment> getAllCommentsByItemId(UUID itemId)
+    {
+        var request = HttpRequest.newBuilder(URI.create(ProxyConfig.URL_BASE + "comments/" + itemId.toString()))
+                .build();
+        try {
+            return client.send(request, new JsonBodyHandler<>(ArrayList.class)).body().get();
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

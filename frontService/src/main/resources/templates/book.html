@@ -51,6 +51,32 @@
             </section>
         </div>
     </article>
+    <br>
+    <article class="row justify-content-center">
+        <div class="col-8 mt-3" th:each="comment: ${comments}">
+            <section class="card text-dark bg-light" >
+                <div class="card-horizontal" style="display: flex; flex: 1 1 auto">
+                    <div class="img-square-wrapper col-1">
+                        <img class="img-fluid" th:src="@{/img/comment.png}" alt="comment" style="height: auto; max-width: 100%">
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-title float-left">
+                            <b><span th:text="${comment.author}"></span></b>
+                        </h6>
+
+                        <p class="card-text" th:text="${comment.content}"></p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">
+                        <span>@ </span>
+                        <span th:text="${comment.timestamp}"></span>
+                    </small>
+                </div>
+                <br>
+            </section>
+        </div>
+    </article>
 </main>
 </body>
 </html>

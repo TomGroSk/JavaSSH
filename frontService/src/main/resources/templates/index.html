@@ -8,7 +8,9 @@
 <body>
 <header th:replace="/layout :: header"/>
 
-<div class="col-md-12 col-xs-12" sec:authorize="!isAuthenticated()">Please register and log in!
+<div class="col-md-12 col-xs-12" sec:authorize="!isAuthenticated()">
+    <br><br><br><br>
+    <h2 style="text-align: center">Please register and log in!</h2>
 </div>
 <main class="container-fluid" sec:authorize="isAuthenticated()">
 

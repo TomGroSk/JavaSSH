@@ -6,4 +6,5 @@ public class ProxyConfig {
     public final static String BOOKS = "books";
     public final static String MOVIES = "movies";
     public final static String GAMES = "games";
+    public final static String COMMENTS = "comments";
 }
