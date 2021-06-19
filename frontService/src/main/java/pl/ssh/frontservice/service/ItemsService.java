@@ -193,4 +193,15 @@ public class ItemsService {
             e.printStackTrace();
         }
     }
+
+    public void removeItem(String itemType, UUID itemId){
+        var request = HttpRequest.newBuilder(URI.create(ProxyConfig.URL_BASE + itemType + "/delete/" + itemId.toString()))
+                .DELETE()
+                .build();
+        try {
+            client.send(request, new JsonBodyHandler<>(ArrayList.class));
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }

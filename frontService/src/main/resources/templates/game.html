@@ -35,7 +35,13 @@
                         </h4>
 
                         <p class="card-text" th:text="${game.description}"></p>
-
+                        <a class="col-3" th:if="${isAdmin}" th:href="@{/games}">
+                            <form action="/games/remove" method="post">
+                                <input type="hidden" name="itemId" th:value="${game.id}"/>
+                                <input type="submit" class="btn btn-danger" value="Remove game"/>
+                            </form>
+                        </a>
+                        <br>
                         <a class="col-3" th:if="${isInCustomerLibrary}" th:href="@{/games/{id}(id=${game.id})}">
                             <form action="/item/remove" method="post">
                                 <input type="hidden" name="itemId" th:value="${game.id}"/>

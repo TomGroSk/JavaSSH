@@ -1,11 +1,12 @@
 package pl.ssh.frontservice.controller;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.server.ResponseStatusException;
 import pl.ssh.frontservice.config.ProxyConfig;
 import pl.ssh.frontservice.service.CustomerService;
 import pl.ssh.frontservice.service.ItemsService;
@@ -32,8 +33,10 @@ public class BookController {
     @GetMapping("/{id}")
     public String getBook(Authentication authentication, Model model, @PathVariable UUID id) {
         var book = itemsService.getBookById(id);
-        model.addAttribute("book", book);
+        var customer = customerService.getCustomerByUsername(authentication.getName());
 
+        model.addAttribute("book", book);
+        model.addAttribute("isAdmin", customerService.isAdmin(customer.getId()));
         model.addAttribute("comments", itemsService.getAllCommentsByItemId(id));
 
         if(authentication != null)
@@ -41,12 +44,24 @@ public class BookController {
             if(authentication.isAuthenticated()){
                 model.addAttribute("isInCustomerLibrary",
                         itemsService.getItem(
-                                customerService.getCustomerByUsername(authentication.getName()).getId(),
+                                customer.getId(),
                                 book.id,
                                 ProxyConfig.BOOKS) != null);
             }
         }
 
         return "book";
+    }
+
+    @PostMapping("/remove")
+    public String removeBook(Authentication authentication, @ModelAttribute("itemId") String itemId){
+        var customer = customerService.getCustomerByUsername(authentication.getName());
+        if(!customerService.isAdmin(customer.getId())){
+            throw new ResponseStatusException(
+                    HttpStatus.FORBIDDEN, "You don't have permission to do this!"
+            );
+        }
+        itemsService.removeItem(ProxyConfig.BOOKS, UUID.fromString(itemId));
+        return "redirect:/books";
     }
 }
