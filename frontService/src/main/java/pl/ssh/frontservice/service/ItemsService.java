@@ -1,19 +1,19 @@
 package pl.ssh.frontservice.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;
 import pl.ssh.frontservice.config.ProxyConfig;
 import pl.ssh.frontservice.model.Item;
 import pl.ssh.frontservice.model.ItemResponse;
-import pl.ssh.frontservice.model.dto.Book;
-import pl.ssh.frontservice.model.dto.Comment;
-import pl.ssh.frontservice.model.dto.Game;
-import pl.ssh.frontservice.model.dto.Movie;
+import pl.ssh.frontservice.model.dto.*;
 import pl.ssh.frontservice.repository.ItemRepository;
 
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -140,16 +140,23 @@ public class ItemsService {
         return null;
     }
 
-    public Item getItem(Long customerId, UUID itemId, String itemType){
+    public Item getItem(Long customerId, UUID itemId, String itemType) {
         var items = itemRepository.getAllByCustomer_IdAndItemIdAndItemType(customerId, itemId, itemType);
-        if(items.isEmpty()){
+        if (items.isEmpty()) {
             return null;
         }
         return items.get(0);
     }
 
-    public List<Comment> getAllCommentsByItemId(UUID itemId)
-    {
+    public void createItem(Item item) {
+        itemRepository.save(item);
+    }
+
+    public void removeItem(Item item) {
+        itemRepository.delete(item);
+    }
+
+    public List<Comment> getAllCommentsByItemId(UUID itemId) {
         var request = HttpRequest.newBuilder(URI.create(ProxyConfig.URL_BASE + "comments/" + itemId.toString()))
                 .build();
         try {
@@ -158,5 +165,32 @@ public class ItemsService {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public void createComment(String itemId, String author, String content) {
+        var comment = new PostComment();
+        comment.author = author;
+        comment.parentId = UUID.fromString(itemId);
+        comment.content = content;
+
+        var objectMapper = new ObjectMapper();
+        String requestBody = null;
+        try {
+            requestBody = objectMapper
+                    .writeValueAsString(comment);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(ProxyConfig.URL_BASE + "comments/create"))
+                .POST(HttpRequest.BodyPublishers.ofString(requestBody))
+                .header("content-type", "application/json")
+                .build();
+        try {
+            client.send(request,HttpResponse.BodyHandlers.ofString());
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

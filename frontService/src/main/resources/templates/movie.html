@@ -37,10 +37,18 @@
                         <p class="card-text" th:text="${movie.description}"></p>
 
                         <a class="col-3" th:if="${isInCustomerLibrary}" th:href="@{/movies/{id}(id=${movie.id})}">
-                            <button class="btn btn-danger">Remove from library</button>
+                            <form action="/item/remove" method="post">
+                                <input type="hidden" name="itemId" th:value="${movie.id}"/>
+                                <input type="hidden" name="itemType" th:value="movies"/>
+                                <input type="submit" class="btn btn-danger" value="Remove from library"/>
+                            </form>
                         </a>
                         <a class="col-3" th:if="${!isInCustomerLibrary}" th:href="@{/movies/{id}(id=${movie.id})}">
-                            <button class="btn btn-success">Add to library</button>
+                            <form action="/item/create" method="post">
+                                <input type="hidden" name="itemId" th:value="${movie.id}"/>
+                                <input type="hidden" name="itemType" th:value="movies"/>
+                                <input type="submit" class="btn btn-success" value="Add to library"/>
+                            </form>
                         </a>
                     </div>
                 </div>
@@ -49,6 +57,17 @@
     </article>
     <br>
     <article class="row justify-content-center">
+        <div class="col-8 mt-3">
+            <hr>
+            <h2>Comments:</h2>
+        </div>
+        <form class="form-group col-8 mt-3" action="/comment/create" method="post">
+            <textarea class="form-control" rows="3" minlength="1" maxlength="255" name="content" wrap="soft" required
+                      placeholder="Write your message!"></textarea>
+            <input type="hidden" name="itemId" th:value="${movie.id}"/>
+            <input type="hidden" name="itemType" th:value="movies"/>
+            <input type="submit" class="btn btn-info col-2 float-end" style="margin-top: 6px;" value="Send"/>
+        </form>
         <div class="col-8 mt-3" th:each="comment: ${comments}">
             <section class="card text-dark bg-light" >
                 <div class="card-horizontal" style="display: flex; flex: 1 1 auto">

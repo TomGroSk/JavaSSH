@@ -45,7 +45,7 @@ public class MovieController {
                         itemsService.getItem(
                                 customerService.getCustomerByUsername(authentication.getName()).getId(),
                                 movie.id,
-                                ProxyConfig.BOOKS) != null);
+                                ProxyConfig.MOVIES) != null);
             }
         }
 

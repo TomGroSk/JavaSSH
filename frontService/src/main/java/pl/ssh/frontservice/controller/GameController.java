@@ -43,7 +43,7 @@ public class GameController {
                         itemsService.getItem(
                                 customerService.getCustomerByUsername(authentication.getName()).getId(),
                                 game.id,
-                                ProxyConfig.BOOKS) != null);
+                                ProxyConfig.GAMES) != null);
             }
         }
 
