@@ -1,11 +1,15 @@
 package pl.ssh.frontservice.model.dto;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 import java.util.Date;
 import java.util.UUID;
 
-public class Book {
+public class PostGame {
 
     public UUID id;
 
@@ -22,11 +26,11 @@ public class Book {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     public Date publicationDate;
 
-    public Long isbn;
-
     public String filename;
 
     public String fileContent;
+
+    public MultipartFile multipartFile;
 
     public UUID getId() {
         return id;
@@ -84,11 +88,18 @@ public class Book {
         this.publicationDate = publicationDate;
     }
 
-    public Long getIsbn() {
-        return isbn;
+    public MultipartFile getMultipartFile() {
+        return multipartFile;
     }
 
-    public void setIsbn(Long isbn) {
-        this.isbn = isbn;
+    public void setMultipartFile(MultipartFile multipartFile) {
+        this.multipartFile = multipartFile;
+        try {
+            byte[] encodeBase64 = Base64.getEncoder().encode(multipartFile.getBytes()); //changing byte array of image to base64
+            fileContent = new String(encodeBase64, StandardCharsets.UTF_8);
+            filename = multipartFile.getName();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

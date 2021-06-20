@@ -7,10 +7,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import pl.ssh.frontservice.config.ProxyConfig;
+import pl.ssh.frontservice.model.dto.PostMovie;
 import pl.ssh.frontservice.service.CustomerService;
 import pl.ssh.frontservice.service.ItemsService;
 
-import javax.validation.Valid;
 import java.util.UUID;
 
 @Controller
@@ -39,9 +39,8 @@ public class MovieController {
         model.addAttribute("isAdmin", customerService.isAdmin(customer.getId()));
         model.addAttribute("comments", itemsService.getAllCommentsByItemId(id));
 
-        if(authentication != null)
-        {
-            if(authentication.isAuthenticated()){
+        if (authentication != null) {
+            if (authentication.isAuthenticated()) {
                 model.addAttribute("isInCustomerLibrary",
                         itemsService.getItem(
                                 customer.getId(),
@@ -53,10 +52,28 @@ public class MovieController {
         return "movie";
     }
 
-    @PostMapping("/remove")
-    public String removeMovie(Authentication authentication, @ModelAttribute("itemId") String itemId){
+    @GetMapping("/create")
+    public String createMovie(Model model) {
+        model.addAttribute("movie", new PostMovie());
+        return "addMovie";
+    }
+
+    @PostMapping("/create")
+    public String createMovie(@ModelAttribute("movie") PostMovie postMovie, Authentication authentication) {
         var customer = customerService.getCustomerByUsername(authentication.getName());
-        if(!customerService.isAdmin(customer.getId())){
+        if (!customerService.isAdmin(customer.getId())) {
+            throw new ResponseStatusException(
+                    HttpStatus.FORBIDDEN, "You don't have permission to do this!"
+            );
+        }
+        itemsService.createObject(itemsService.mapMovie(postMovie), ProxyConfig.MOVIES);
+        return "redirect:/movies";
+    }
+
+    @PostMapping("/remove")
+    public String removeMovie(Authentication authentication, @ModelAttribute("itemId") String itemId) {
+        var customer = customerService.getCustomerByUsername(authentication.getName());
+        if (!customerService.isAdmin(customer.getId())) {
             throw new ResponseStatusException(
                     HttpStatus.FORBIDDEN, "You don't have permission to do this!"
             );

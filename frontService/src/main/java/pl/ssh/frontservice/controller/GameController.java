@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import pl.ssh.frontservice.config.ProxyConfig;
+import pl.ssh.frontservice.model.dto.PostGame;
 import pl.ssh.frontservice.service.CustomerService;
 import pl.ssh.frontservice.service.ItemsService;
 
@@ -38,9 +39,8 @@ public class GameController {
         model.addAttribute("isAdmin", customerService.isAdmin(customer.getId()));
         model.addAttribute("comments", itemsService.getAllCommentsByItemId(id));
 
-        if(authentication != null)
-        {
-            if(authentication.isAuthenticated()){
+        if (authentication != null) {
+            if (authentication.isAuthenticated()) {
                 model.addAttribute("isInCustomerLibrary",
                         itemsService.getItem(
                                 customer.getId(),
@@ -52,10 +52,28 @@ public class GameController {
         return "game";
     }
 
-    @PostMapping("/remove")
-    public String removeGame(Authentication authentication, @ModelAttribute("itemId") String itemId){
+    @GetMapping("/create")
+    public String createGame(Model model) {
+        model.addAttribute("game", new PostGame());
+        return "addGame";
+    }
+
+    @PostMapping("/create")
+    public String createGame(@ModelAttribute("game") PostGame postGame, Authentication authentication) {
         var customer = customerService.getCustomerByUsername(authentication.getName());
-        if(!customerService.isAdmin(customer.getId())){
+        if (!customerService.isAdmin(customer.getId())) {
+            throw new ResponseStatusException(
+                    HttpStatus.FORBIDDEN, "You don't have permission to do this!"
+            );
+        }
+        itemsService.createObject(itemsService.mapGame(postGame), ProxyConfig.GAMES);
+        return "redirect:/games";
+    }
+
+    @PostMapping("/remove")
+    public String removeGame(Authentication authentication, @ModelAttribute("itemId") String itemId) {
+        var customer = customerService.getCustomerByUsername(authentication.getName());
+        if (!customerService.isAdmin(customer.getId())) {
             throw new ResponseStatusException(
                     HttpStatus.FORBIDDEN, "You don't have permission to do this!"
             );

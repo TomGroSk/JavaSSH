@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/books/create" th:object="${book}" id="bookform" method="post" enctype="multipart/form-data">
+
+    <input type="text" name="itemType" th:field="${book.title}"/>
+    <input type="text" name="itemType" th:field="${book.publisher}"/>
+    <input type="text" name="itemType" th:field="${book.author}"/>
+    <input type="date" name="itemType" th:field="${book.publicationDate}"/>
+    <input type="number" name="itemType" th:field="${book.isbn}"/>
+    <textarea class="spittle-text" minlength="1" maxlength="255" name="description" form="bookform"
+              wrap="soft"
+              th:field="${book.description}" required placeholder="Description"></textarea>
+    <label for="file-inp" class="btn btn-default btn-file file-input">
+        Import cover
+    </label>
+
+    <input id="file-inp" type="file" th:field="*{multipartFile}" accept="image/*" style="display: none;">
+
+
+    <br/>
+    <input type="submit" value="Create"/>
+</form>
+</body>
+</html>

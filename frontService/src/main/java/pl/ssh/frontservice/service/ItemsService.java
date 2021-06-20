@@ -204,4 +204,69 @@ public class ItemsService {
             e.printStackTrace();
         }
     }
+
+    public void createObject(Object object, String type){
+        var objectMapper = new ObjectMapper();
+        String requestBody = null;
+        try {
+            requestBody = objectMapper
+                    .writeValueAsString(object);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(ProxyConfig.URL_BASE + type + "/create"))
+                .POST(HttpRequest.BodyPublishers.ofString(requestBody))
+                .header("content-type", "application/json")
+                .build();
+        try {
+            client.send(request,HttpResponse.BodyHandlers.ofString());
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Book mapBook(PostBook postBook){
+        var book = new Book();
+        book.author = postBook.author;
+        book.fileContent = postBook.fileContent;
+        book.filename = postBook.filename;
+        book.publicationDate = postBook.publicationDate;
+        book.description = postBook.description;
+        book.isbn = postBook.isbn;
+        book.cover = postBook.cover;
+        book.title = postBook.title;
+        book.publisher = postBook.publisher;
+        book.author = postBook.author;
+        return book;
+    }
+
+    public Game mapGame(PostGame postGame){
+        var game = new Game();
+        game.author = postGame.author;
+        game.fileContent = postGame.fileContent;
+        game.filename = postGame.filename;
+        game.publicationDate = postGame.publicationDate;
+        game.description = postGame.description;
+        game.cover = postGame.cover;
+        game.title = postGame.title;
+        game.publisher = postGame.publisher;
+        game.author = postGame.author;
+        return game;
+    }
+
+    public Movie mapMovie(PostMovie postMovie){
+        var movie = new Movie();
+        movie.author = postMovie.author;
+        movie.fileContent = postMovie.fileContent;
+        movie.filename = postMovie.filename;
+        movie.releaseDate = postMovie.releaseDate;
+        movie.description = postMovie.description;
+        movie.cover = postMovie.cover;
+        movie.title = postMovie.title;
+        movie.publisher = postMovie.publisher;
+        movie.author = postMovie.author;
+        return movie;
+    }
 }

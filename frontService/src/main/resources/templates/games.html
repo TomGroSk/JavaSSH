@@ -9,6 +9,7 @@
 <header th:replace="/layout :: header"/>
 
 <main class="container-fluid" sec:authorize="isAuthenticated()">
+    <a th:href="@{games/create}"><button class="btn btn-success">New</button></a>
     <article class="row justify-content-center">
         <div class="col-8 mt-3" th:each="game: ${games}">
             <section class="card text-dark bg-light">
