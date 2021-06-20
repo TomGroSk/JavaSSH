@@ -24,6 +24,9 @@ public class Game {
     public Date publicationDate;
 
     @Transient
+    public String formattedDate;
+
+    @Transient
     public String filename;
 
     @Transient
@@ -83,5 +86,13 @@ public class Game {
 
     public void setPublicationDate(Date publicationDate) {
         this.publicationDate = publicationDate;
+    }
+
+    public String getFormattedDate() {
+        return formattedDate;
+    }
+
+    public void setFormattedDate(String formattedDate) {
+        this.formattedDate = formattedDate;
     }
 }

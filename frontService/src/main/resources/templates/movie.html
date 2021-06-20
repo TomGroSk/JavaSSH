@@ -31,7 +31,7 @@
                         </h4>
                         <h4 class="card-title float-left">
                             <span class="text-muted">Release date: </span>
-                            <span th:text="${movie.releaseDate}"></span>
+                            <span th:text="${movie.formattedDate}"></span>
                         </h4>
 
                         <p class="card-text" th:text="${movie.description}"></p>
@@ -91,7 +91,7 @@
                 <div class="card-footer">
                     <small class="text-muted">
                         <span>@ </span>
-                        <span th:text="${comment.timestamp}"></span>
+                        <span th:text="${comment.formattedDate}"></span>
                     </small>
                 </div>
                 <br>

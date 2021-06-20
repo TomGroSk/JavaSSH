@@ -12,6 +12,8 @@ import pl.ssh.frontservice.model.dto.PostBook;
 import pl.ssh.frontservice.service.CustomerService;
 import pl.ssh.frontservice.service.ItemsService;
 
+import java.util.Comparator;
+import java.util.Map;
 import java.util.UUID;
 
 @Controller
@@ -37,7 +39,7 @@ public class BookController {
         var customer = customerService.getCustomerByUsername(authentication.getName());
 
         model.addAttribute("book", book);
-        model.addAttribute("isAdmin", customerService.isAdmin(customer.getId()));
+        model.addAttribute("isAdmin", customerService.isAdmin(customer.getId())); 
         model.addAttribute("comments", itemsService.getAllCommentsByItemId(id));
 
         if (authentication != null) {

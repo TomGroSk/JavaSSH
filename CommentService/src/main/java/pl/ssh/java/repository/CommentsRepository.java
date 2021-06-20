@@ -11,7 +11,11 @@ import pl.ssh.java.entity.Comment;
 
 import java.net.URISyntaxException;
 import java.security.InvalidKeyException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -46,8 +50,18 @@ public class CommentsRepository {
 
         var comments = cloudTable.execute(partitionQuery);
 
-        return StreamSupport
-                .stream(comments.spliterator(), false).collect(Collectors.toCollection(ArrayList::new));
+
+        var response=  StreamSupport
+                .stream(comments.spliterator(), false)
+                .sorted(Comparator.comparing(Comment::getTimestamp))
+                .collect(Collectors.toCollection(ArrayList::new));
+
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        for(var comment : response){
+            comment.setFormattedDate(df.format(comment.getTimestamp()));
+        }
+
+        return response;
     }
 
     public Comment getComment(UUID parentId, UUID commentId) {

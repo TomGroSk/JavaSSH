@@ -19,6 +19,8 @@ public class Movie {
 
     public Date releaseDate;
 
+    public String formattedDate;
+
     public String filename;
 
     public String fileContent;
@@ -77,5 +79,13 @@ public class Movie {
 
     public void setReleaseDate(Date releaseDate) {
         this.releaseDate = releaseDate;
+    }
+
+    public String getFormattedDate() {
+        return formattedDate;
+    }
+
+    public void setFormattedDate(String formattedDate) {
+        this.formattedDate = formattedDate;
     }
 }
