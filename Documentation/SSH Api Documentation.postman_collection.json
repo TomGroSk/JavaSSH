@@ -1,0 +1,3606 @@
+{
+	"info": {
+		"_postman_id": "e645c618-09a2-443a-93db-812ecdf6ff5f",
+		"name": "SSH Api Documentation",
+		"description": "Api Documentation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "movies",
+			"item": [
+				{
+					"name": "get",
+					"item": [
+						{
+							"name": "getAllMovie",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/movies/get",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"movies",
+										"get"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/movies/get",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"movies",
+												"get"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/movies/get",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"movies",
+												"get"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/movies/get",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"movies",
+												"get"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/movies/get",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"movies",
+												"get"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "getMovieById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/movies/get/:id?id=urn:uuid:21c9d4d3-da2f-836b-f30f-3abb327a9b46",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"movies",
+										"get",
+										":id"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "urn:uuid:21c9d4d3-da2f-836b-f30f-3abb327a9b46",
+											"description": "id"
+										}
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/movies/get/:id?id=urn:uuid:21c9d4d3-da2f-836b-f30f-3abb327a9b46",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"movies",
+												"get",
+												":id"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "urn:uuid:21c9d4d3-da2f-836b-f30f-3abb327a9b46"
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/movies/get/:id?id=urn:uuid:21c9d4d3-da2f-836b-f30f-3abb327a9b46",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"movies",
+												"get",
+												":id"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "urn:uuid:21c9d4d3-da2f-836b-f30f-3abb327a9b46"
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/movies/get/:id?id=urn:uuid:21c9d4d3-da2f-836b-f30f-3abb327a9b46",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"movies",
+												"get",
+												":id"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "urn:uuid:21c9d4d3-da2f-836b-f30f-3abb327a9b46"
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/movies/get/:id?id=urn:uuid:21c9d4d3-da2f-836b-f30f-3abb327a9b46",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"movies",
+												"get",
+												":id"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "urn:uuid:21c9d4d3-da2f-836b-f30f-3abb327a9b46"
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "createMovie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"author\": \"eu ex\",\n    \"cover\": \"laboris reprehenderit labore commodo\",\n    \"description\": \"cupidatat enim adipisicing sit\",\n    \"fileContent\": \"et laboris deserunt nisi\",\n    \"filename\": \"in qui ipsum\",\n    \"id\": \"urn:uuid:878bfa5e-d6f1-308c-ab86-ab89318add59\",\n    \"publisher\": \"qui velit ut aliqua id\",\n    \"releaseDate\": \"1999-09-15T08:22:28.167Z\",\n    \"title\": \"dolore reprehenderit fugiat\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/movies/create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"movies",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/movies/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"movies",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "urn:uuid:21c9d4d3-da2f-836b-f30f-3abb327a9b46"
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/movies/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"movies",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/movies/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"movies",
+										"create"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/movies/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"movies",
+										"create"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/movies/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"movies",
+										"create"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "deleteMovie",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\"urn:uuid:21c9d4d3-da2f-836b-f30f-3abb327a9b46\""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/movies/delete/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"movies",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"urn:uuid:21c9d4d3-da2f-836b-f30f-3abb327a9b46\""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/movies/delete/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"movies",
+										"delete",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"urn:uuid:21c9d4d3-da2f-836b-f30f-3abb327a9b46\""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/movies/delete/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"movies",
+										"delete",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"urn:uuid:21c9d4d3-da2f-836b-f30f-3abb327a9b46\""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/movies/delete/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"movies",
+										"delete",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"urn:uuid:21c9d4d3-da2f-836b-f30f-3abb327a9b46\""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/movies/delete/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"movies",
+										"delete",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "updateMovie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"author\": \"eu ex\",\n    \"cover\": \"laboris reprehenderit labore commodo\",\n    \"description\": \"cupidatat enim adipisicing sit\",\n    \"fileContent\": \"et laboris deserunt nisi\",\n    \"filename\": \"in qui ipsum\",\n    \"id\": \"urn:uuid:878bfa5e-d6f1-308c-ab86-ab89318add59\",\n    \"publisher\": \"qui velit ut aliqua id\",\n    \"releaseDate\": \"1999-09-15T08:22:28.167Z\",\n    \"title\": \"dolore reprehenderit fugiat\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/movies/update",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"movies",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/movies/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"movies",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "urn:uuid:21c9d4d3-da2f-836b-f30f-3abb327a9b46"
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/movies/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"movies",
+										"update"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/movies/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"movies",
+										"update"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/movies/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"movies",
+										"update"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/movies/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"movies",
+										"update"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "games",
+			"item": [
+				{
+					"name": "get",
+					"item": [
+						{
+							"name": "getAllGames",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/games/get",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"games",
+										"get"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/games/get",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"games",
+												"get"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/games/get",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"games",
+												"get"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/games/get",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"games",
+												"get"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/games/get",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"games",
+												"get"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "getGameById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/games/get/:id?id=4f461692-385e-02d0-d89f-0dcf8d69d6a0",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"games",
+										"get",
+										":id"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "4f461692-385e-02d0-d89f-0dcf8d69d6a0",
+											"description": "id"
+										}
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/games/get/:id?id=4f461692-385e-02d0-d89f-0dcf8d69d6a0",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"games",
+												"get",
+												":id"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "4f461692-385e-02d0-d89f-0dcf8d69d6a0"
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/games/get/:id?id=4f461692-385e-02d0-d89f-0dcf8d69d6a0",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"games",
+												"get",
+												":id"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "4f461692-385e-02d0-d89f-0dcf8d69d6a0"
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/games/get/:id?id=4f461692-385e-02d0-d89f-0dcf8d69d6a0",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"games",
+												"get",
+												":id"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "4f461692-385e-02d0-d89f-0dcf8d69d6a0"
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/games/get/:id?id=4f461692-385e-02d0-d89f-0dcf8d69d6a0",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"games",
+												"get",
+												":id"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "4f461692-385e-02d0-d89f-0dcf8d69d6a0"
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "createGame",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"author\": \"adipisicing Ut non\",\n    \"cover\": \"incididunt\",\n    \"description\": \"dolore esse proident est\",\n    \"fileContent\": \"ex ullamco\",\n    \"filename\": \"qui Lorem velit sint commodo\",\n    \"id\": \"urn:uuid:5ef4c7e5-7370-e2be-a88c-bad7bafd39ad\",\n    \"publicationDate\": \"2020-11-01T01:57:15.129Z\",\n    \"publisher\": \"laboris mollit Lorem fugiat\",\n    \"title\": \"nisi do et reprehenderit\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/games/create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"games",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/games/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"games",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "4f461692-385e-02d0-d89f-0dcf8d69d6a0"
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/games/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"games",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/games/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"games",
+										"create"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/games/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"games",
+										"create"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/games/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"games",
+										"create"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "deleteGame",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\"4f461692-385e-02d0-d89f-0dcf8d69d6a0\""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/games/delete/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"games",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"4f461692-385e-02d0-d89f-0dcf8d69d6a0\""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/games/delete/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"games",
+										"delete",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"4f461692-385e-02d0-d89f-0dcf8d69d6a0\""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/games/delete/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"games",
+										"delete",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"4f461692-385e-02d0-d89f-0dcf8d69d6a0\""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/games/delete/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"games",
+										"delete",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"4f461692-385e-02d0-d89f-0dcf8d69d6a0\""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/games/delete/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"games",
+										"delete",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "updateGame",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"author\": \"adipisicing Ut non\",\n    \"cover\": \"incididunt\",\n    \"description\": \"dolore esse proident est\",\n    \"fileContent\": \"ex ullamco\",\n    \"filename\": \"qui Lorem velit sint commodo\",\n    \"id\": \"urn:uuid:5ef4c7e5-7370-e2be-a88c-bad7bafd39ad\",\n    \"publicationDate\": \"2020-11-01T01:57:15.129Z\",\n    \"publisher\": \"laboris mollit Lorem fugiat\",\n    \"title\": \"nisi do et reprehenderit\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/games/update",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"games",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/games/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"games",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "4f461692-385e-02d0-d89f-0dcf8d69d6a0"
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/games/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"games",
+										"update"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/games/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"games",
+										"update"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/games/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"games",
+										"update"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/games/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"games",
+										"update"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "comments",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "getByParentId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/comments/:id?id=d867e256-e902-5c44-1ed0-cc7e51edd15c",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comments",
+										":id"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "d867e256-e902-5c44-1ed0-cc7e51edd15c",
+											"description": "id"
+										}
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/comments/:id?id=d867e256-e902-5c44-1ed0-cc7e51edd15c",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"comments",
+												":id"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "d867e256-e902-5c44-1ed0-cc7e51edd15c"
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/comments/:id?id=d867e256-e902-5c44-1ed0-cc7e51edd15c",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"comments",
+												":id"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "d867e256-e902-5c44-1ed0-cc7e51edd15c"
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/comments/:id?id=d867e256-e902-5c44-1ed0-cc7e51edd15c",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"comments",
+												":id"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "d867e256-e902-5c44-1ed0-cc7e51edd15c"
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/comments/:id?id=d867e256-e902-5c44-1ed0-cc7e51edd15c",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"comments",
+												":id"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "d867e256-e902-5c44-1ed0-cc7e51edd15c"
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{parent Id}/{comment Id}",
+					"item": [
+						{
+							"name": "getComment",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/comments/d769d887-00ec-4064-bae4-d2fdc0f2adb7/d769d887-00ec-4064-bae4-d2fdc0f2adb7",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comments",
+										"d769d887-00ec-4064-bae4-d2fdc0f2adb7",
+										"d769d887-00ec-4064-bae4-d2fdc0f2adb7"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/comments/:parentId/:commentId?commentId=d867e256-e902-5c44-1ed0-cc7e51edd15c&parentId=d867e256-e902-5c44-1ed0-cc7e51edd15c",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"comments",
+												":parentId",
+												":commentId"
+											],
+											"query": [
+												{
+													"key": "commentId",
+													"value": "d867e256-e902-5c44-1ed0-cc7e51edd15c"
+												},
+												{
+													"key": "parentId",
+													"value": "d867e256-e902-5c44-1ed0-cc7e51edd15c"
+												}
+											],
+											"variable": [
+												{
+													"key": "parentId"
+												},
+												{
+													"key": "commentId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/comments/:parentId/:commentId?commentId=d867e256-e902-5c44-1ed0-cc7e51edd15c&parentId=d867e256-e902-5c44-1ed0-cc7e51edd15c",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"comments",
+												":parentId",
+												":commentId"
+											],
+											"query": [
+												{
+													"key": "commentId",
+													"value": "d867e256-e902-5c44-1ed0-cc7e51edd15c"
+												},
+												{
+													"key": "parentId",
+													"value": "d867e256-e902-5c44-1ed0-cc7e51edd15c"
+												}
+											],
+											"variable": [
+												{
+													"key": "parentId"
+												},
+												{
+													"key": "commentId"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/comments/:parentId/:commentId?commentId=d867e256-e902-5c44-1ed0-cc7e51edd15c&parentId=d867e256-e902-5c44-1ed0-cc7e51edd15c",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"comments",
+												":parentId",
+												":commentId"
+											],
+											"query": [
+												{
+													"key": "commentId",
+													"value": "d867e256-e902-5c44-1ed0-cc7e51edd15c"
+												},
+												{
+													"key": "parentId",
+													"value": "d867e256-e902-5c44-1ed0-cc7e51edd15c"
+												}
+											],
+											"variable": [
+												{
+													"key": "parentId"
+												},
+												{
+													"key": "commentId"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/comments/:parentId/:commentId?commentId=d867e256-e902-5c44-1ed0-cc7e51edd15c&parentId=d867e256-e902-5c44-1ed0-cc7e51edd15c",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"comments",
+												":parentId",
+												":commentId"
+											],
+											"query": [
+												{
+													"key": "commentId",
+													"value": "d867e256-e902-5c44-1ed0-cc7e51edd15c"
+												},
+												{
+													"key": "parentId",
+													"value": "d867e256-e902-5c44-1ed0-cc7e51edd15c"
+												}
+											],
+											"variable": [
+												{
+													"key": "parentId"
+												},
+												{
+													"key": "commentId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "createComment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"author\": \"adi\",\n    \"content\": \"aliqua ea\",\n    \"parentId\": \"ad669675-0e4e-2d55-e53d-7b40b4f16d4f\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/comments/create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"comments",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"author\": \"adi\",\n    \"content\": \"aliqua ea\",\n    \"parentId\": \"ad669675-0e4e-2d55-e53d-7b40b4f16d4f\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/comments/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comments",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "d867e256-e902-5c44-1ed0-cc7e51edd15c"
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"author\": \"adi\",\n    \"content\": \"aliqua ea\",\n    \"parentId\": \"ad669675-0e4e-2d55-e53d-7b40b4f16d4f\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/comments/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comments",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"author\": \"adi\",\n    \"content\": \"aliqua ea\",\n    \"parentId\": \"ad669675-0e4e-2d55-e53d-7b40b4f16d4f\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/comments/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comments",
+										"create"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"author\": \"adi\",\n    \"content\": \"aliqua ea\",\n    \"parentId\": \"ad669675-0e4e-2d55-e53d-7b40b4f16d4f\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/comments/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comments",
+										"create"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"author\": \"adi\",\n    \"content\": \"aliqua ea\",\n    \"parentId\": \"ad669675-0e4e-2d55-e53d-7b40b4f16d4f\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/comments/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comments",
+										"create"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "deleteComment",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\"d867e256-e902-5c44-1ed0-cc7e51edd15c\""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/comments/:parentId/:commentId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"comments",
+								":parentId",
+								":commentId"
+							],
+							"variable": [
+								{
+									"key": "parentId"
+								},
+								{
+									"key": "commentId"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"d867e256-e902-5c44-1ed0-cc7e51edd15c\""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/comments/:parentId/:commentId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comments",
+										":parentId",
+										":commentId"
+									],
+									"variable": [
+										{
+											"key": "parentId"
+										},
+										{
+											"key": "commentId"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"d867e256-e902-5c44-1ed0-cc7e51edd15c\""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/comments/:parentId/:commentId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comments",
+										":parentId",
+										":commentId"
+									],
+									"variable": [
+										{
+											"key": "parentId"
+										},
+										{
+											"key": "commentId"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"d867e256-e902-5c44-1ed0-cc7e51edd15c\""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/comments/:parentId/:commentId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comments",
+										":parentId",
+										":commentId"
+									],
+									"variable": [
+										{
+											"key": "parentId"
+										},
+										{
+											"key": "commentId"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"d867e256-e902-5c44-1ed0-cc7e51edd15c\""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/comments/:parentId/:commentId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comments",
+										":parentId",
+										":commentId"
+									],
+									"variable": [
+										{
+											"key": "parentId"
+										},
+										{
+											"key": "commentId"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "updateComment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"author\": \"adi\",\n    \"content\": \"aliqua ea\",\n    \"parentId\": \"ad669675-0e4e-2d55-e53d-7b40b4f16d4f\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/comments/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"comments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"author\": \"adi\",\n    \"content\": \"aliqua ea\",\n    \"parentId\": \"ad669675-0e4e-2d55-e53d-7b40b4f16d4f\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/comments/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comments",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"author\": \"adi\",\n    \"content\": \"aliqua ea\",\n    \"parentId\": \"ad669675-0e4e-2d55-e53d-7b40b4f16d4f\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/comments/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comments",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"author\": \"adi\",\n    \"content\": \"aliqua ea\",\n    \"parentId\": \"ad669675-0e4e-2d55-e53d-7b40b4f16d4f\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/comments/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comments",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"author\": \"adi\",\n    \"content\": \"aliqua ea\",\n    \"parentId\": \"ad669675-0e4e-2d55-e53d-7b40b4f16d4f\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/comments/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comments",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"author\": \"adi\",\n    \"content\": \"aliqua ea\",\n    \"parentId\": \"ad669675-0e4e-2d55-e53d-7b40b4f16d4f\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/comments/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comments",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "books",
+			"item": [
+				{
+					"name": "get",
+					"item": [
+						{
+							"name": "getAllBooks",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/books/get",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										"get"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/books/get",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												"get"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/books/get",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												"get"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/books/get",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												"get"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/books/get",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												"get"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "getBookById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/books/get/d769d887-00ec-4064-bae4-d2fdc0f2adb7",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										"get",
+										"d769d887-00ec-4064-bae4-d2fdc0f2adb7"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/books/get/:id?id=urn:uuid:8c1c6ced-c19a-33ea-8f32-ddcac50e3bda",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												"get",
+												":id"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "urn:uuid:8c1c6ced-c19a-33ea-8f32-ddcac50e3bda"
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/books/get/:id?id=urn:uuid:8c1c6ced-c19a-33ea-8f32-ddcac50e3bda",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												"get",
+												":id"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "urn:uuid:8c1c6ced-c19a-33ea-8f32-ddcac50e3bda"
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/books/get/:id?id=urn:uuid:8c1c6ced-c19a-33ea-8f32-ddcac50e3bda",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												"get",
+												":id"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "urn:uuid:8c1c6ced-c19a-33ea-8f32-ddcac50e3bda"
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/books/get/:id?id=urn:uuid:8c1c6ced-c19a-33ea-8f32-ddcac50e3bda",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												"get",
+												":id"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "urn:uuid:8c1c6ced-c19a-33ea-8f32-ddcac50e3bda"
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "createBook",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"author\": \"consectetur nostrud adipisicing\",\n    \"cover\": \"in sed dolore laboris anim\",\n    \"description\": \"nisi\",\n    \"fileContent\": \"Ut dolore Duis cupidatat\",\n    \"filename\": \"veniam irure aliquip officia\",\n    \"id\": \"urn:uuid:a0d95cbb-5188-543b-8487-c25ef316e4bd\",\n    \"isbn\": -94864954,\n    \"publicationDate\": \"2004-03-30T15:14:39.707Z\",\n    \"publisher\": \"sed minim\",\n    \"title\": \"tempor qui cillum\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/books/create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"books",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/books/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "urn:uuid:8c1c6ced-c19a-33ea-8f32-ddcac50e3bda"
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/books/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/books/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										"create"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/books/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										"create"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/books/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										"create"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "deleteBook",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\"urn:uuid:8c1c6ced-c19a-33ea-8f32-ddcac50e3bda\""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/books/delete/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"books",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"urn:uuid:8c1c6ced-c19a-33ea-8f32-ddcac50e3bda\""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/books/delete/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										"delete",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"urn:uuid:8c1c6ced-c19a-33ea-8f32-ddcac50e3bda\""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/books/delete/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										"delete",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"urn:uuid:8c1c6ced-c19a-33ea-8f32-ddcac50e3bda\""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/books/delete/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										"delete",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"urn:uuid:8c1c6ced-c19a-33ea-8f32-ddcac50e3bda\""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/books/delete/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										"delete",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "updateBook",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"author\": \"consectetur nostrud adipisicing\",\n    \"cover\": \"in sed dolore laboris anim\",\n    \"description\": \"nisi\",\n    \"fileContent\": \"Ut dolore Duis cupidatat\",\n    \"filename\": \"veniam irure aliquip officia\",\n    \"id\": \"urn:uuid:a0d95cbb-5188-543b-8487-c25ef316e4bd\",\n    \"isbn\": -94864954,\n    \"publicationDate\": \"2004-03-30T15:14:39.707Z\",\n    \"publisher\": \"sed minim\",\n    \"title\": \"tempor qui cillum\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/books/update",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"books",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/books/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "urn:uuid:8c1c6ced-c19a-33ea-8f32-ddcac50e3bda"
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/books/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										"update"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/books/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										"update"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/books/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										"update"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/books/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										"update"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:5000"
+		}
+	]
+}
