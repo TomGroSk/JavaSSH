@@ -24,6 +24,9 @@ public class Movie {
     public Date releaseDate;
 
     @Transient
+    public String formattedDate;
+
+    @Transient
     public String filename;
 
     @Transient
@@ -83,5 +86,13 @@ public class Movie {
 
     public void setReleaseDate(Date releaseDate) {
         this.releaseDate = releaseDate;
+    }
+
+    public String getFormattedDate() {
+        return formattedDate;
+    }
+
+    public void setFormattedDate(String formattedDate) {
+        this.formattedDate = formattedDate;
     }
 }

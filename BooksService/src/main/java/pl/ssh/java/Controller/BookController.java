@@ -10,6 +10,8 @@ import pl.ssh.java.Repository.BookRepository;
 import pl.ssh.java.Service.BookService;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.UUID;
 
@@ -28,13 +30,26 @@ public class BookController {
 
     @GetMapping("/get")
     public List<Book> getAllBooks() {
-        return bookRepository.findAll();
+        var books =  bookRepository.findAll();
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        for (Book b : books) {
+            if(b.publicationDate != null)
+            {
+                b.setFormattedDate(df.format(b.publicationDate));
+            }
+        }
+        return books;
     }
 
     @GetMapping("/get/{id}")
     public Book getBookById(@ModelAttribute("id") UUID id) {
         var book = bookRepository.findById(id);
         if (book.isPresent()) {
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+            if(book.get().publicationDate != null)
+            {
+                book.get().setFormattedDate(df.format(book.get().publicationDate));
+            }
             return book.get();
         }
 

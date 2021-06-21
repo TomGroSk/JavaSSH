@@ -31,7 +31,7 @@
                         </h4>
                         <h4 class="card-title float-left">
                             <span class="text-muted">Publication date: </span>
-                            <span th:text="${book.publicationDate}"></span>
+                            <span th:text="${book.formattedDate}"></span>
                         </h4>
                         <h4 class="card-title float-left">
                             <span class="text-muted">ISBN: </span>
@@ -97,7 +97,7 @@
                 <div class="card-footer">
                     <small class="text-muted">
                         <span>@ </span>
-                        <span th:text="${comment.timestamp}"></span>
+                        <span th:text="${comment.formattedDate}"></span>
                     </small>
                 </div>
                 <br>

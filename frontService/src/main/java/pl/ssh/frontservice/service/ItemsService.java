@@ -14,7 +14,10 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.UUID;
 
@@ -44,16 +47,25 @@ public class ItemsService {
             try {
                 switch (item.getItemType()) {
                     case ProxyConfig.BOOKS:
-                        var book = client.send(request, new JsonBodyHandler<>(Book.class)).body().get();
-                        itemResponse.books.add(book);
+                        var bookResponse = client.send(request, new JsonBodyHandler<>(Book.class));
+                        if(bookResponse.statusCode() == 200){
+                            var book = bookResponse.body().get();
+                            itemResponse.books.add(book);
+                        }
                         break;
                     case ProxyConfig.MOVIES:
-                        var movie = client.send(request, new JsonBodyHandler<>(Movie.class)).body().get();
-                        itemResponse.movies.add(movie);
+                        var movieResponse = client.send(request, new JsonBodyHandler<>(Movie.class));
+                        if(movieResponse.statusCode() == 200){
+                            var movie = movieResponse.body().get();
+                            itemResponse.movies.add(movie);
+                        }
                         break;
                     case ProxyConfig.GAMES:
-                        var game = client.send(request, new JsonBodyHandler<>(Game.class)).body().get();
-                        itemResponse.games.add(game);
+                        var gameResponse = client.send(request, new JsonBodyHandler<>(Game.class));
+                        if(gameResponse.statusCode() == 200){
+                            var game = gameResponse.body().get();
+                            itemResponse.games.add(game);
+                        }
                         break;
                     default:
                         break;
@@ -160,7 +172,7 @@ public class ItemsService {
         var request = HttpRequest.newBuilder(URI.create(ProxyConfig.URL_BASE + "comments/" + itemId.toString()))
                 .build();
         try {
-            return client.send(request, new JsonBodyHandler<>(ArrayList.class)).body().get();
+             return client.send(request, new JsonBodyHandler<>(ArrayList.class)).body().get();
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }

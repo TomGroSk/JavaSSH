@@ -1,28 +1,68 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+
+<head th:replace="/layout :: head">
+
 <body>
-<form action="/games/create" th:object="${game}" id="bookform" method="post" enctype="multipart/form-data">
+<header th:replace="/layout :: header"/>
 
-    <input type="text" name="itemType" th:field="*{title}"/>
-    <input type="text" name="itemType" th:field="*{publisher}"/>
-    <input type="text" name="itemType" th:field="*{author}"/>
-    <input type="date" name="itemType" th:field="*{publicationDate}"/>
-    <textarea class="spittle-text" minlength="1" maxlength="255" name="description" form="bookform"
-              wrap="soft"
-              th:field="*{description}" required placeholder="Description"></textarea>
-    <label for="file-inp" class="btn btn-default btn-file file-input">
-        Import cover
-    </label>
+<br>
+<main class="row justify-content-center">
+    <section class="col-md-4">
 
-    <input id="file-inp" type="file" th:field="*{multipartFile}" accept="image/*" style="display: none;">
+        <h3>Add new game</h3>
+        <br>
 
-    <br/>
-    <input type="submit" value="Create"/>
-</form>
+        <form action="/games/create" th:object="${game}" id="bookform" method="post" enctype="multipart/form-data">
+
+            <div class="mb-3 row">
+                <label for="title" class="col-sm-2 col-form-label">Title</label>
+                <div class="col-sm-10">
+                    <input id="title" class="form-control" type="text" name="itemType" th:field="${game.title}"/>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="publisher" class="col-sm-2 col-form-label">Publisher</label>
+                <div class="col-sm-10">
+                    <input id="publisher" class="form-control" type="text" name="itemType" th:field="${game.publisher}"/>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="author" class="col-sm-2 col-form-label">Author</label>
+                <div class="col-sm-10">
+                    <input id="author" class="form-control" type="text" name="itemType" th:field="${game.author}"/>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="publicationDate" class="col-sm-2 col-form-label">Publication Date</label>
+                <div class="col-sm-10">
+                    <input id="publicationDate" class="form-control" type="date" name="itemType" th:field="${game.publicationDate}"/>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="description" class="col-sm-2 col-form-label">Description</label>
+                <div class="col-sm-10">
+                <textarea id="description" class="form-control" minlength="1" maxlength="255" name="description" form="bookform"
+                          wrap="soft"
+                          th:field="${game.description}" required placeholder="Description" rows="4"></textarea>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <input id="formFile" class="form-control" type="file" th:field="*{multipartFile}" accept="image/*">
+            </div>
+
+            <div class="float-end">
+                <input type="submit" value="Create" class="btn btn-success" />
+            </div>
+
+        </form>
+    </section>
+</main>
 </body>
 </html>

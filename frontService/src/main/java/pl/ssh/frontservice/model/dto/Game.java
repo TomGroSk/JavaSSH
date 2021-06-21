@@ -19,6 +19,8 @@ public class Game {
 
     public Date publicationDate;
 
+    public String formattedDate;
+
     public String filename;
 
     public String fileContent;
@@ -77,5 +79,13 @@ public class Game {
 
     public void setPublicationDate(Date publicationDate) {
         this.publicationDate = publicationDate;
+    }
+
+    public String getFormattedDate() {
+        return formattedDate;
+    }
+
+    public void setFormattedDate(String formattedDate) {
+        this.formattedDate = formattedDate;
     }
 }

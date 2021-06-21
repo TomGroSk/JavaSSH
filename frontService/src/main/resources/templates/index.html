@@ -39,7 +39,7 @@
                 <div class="card-footer">
                     <small class="text-muted">
                         <span>published at</span>
-                        <span th:text="${book.publicationDate}"></span>
+                        <span th:text="${book.formattedDate}"></span>
                     </small>
                 </div>
             </section>
@@ -71,7 +71,7 @@
                 <div class="card-footer">
                     <small class="text-muted">
                         <span>released at</span>
-                        <span th:text="${movie.releaseDate}"></span>
+                        <span th:text="${movie.formattedDate}"></span>
                     </small>
                 </div>
             </section>
@@ -103,7 +103,7 @@
                 <div class="card-footer">
                     <small class="text-muted">
                         <span>published at</span>
-                        <span th:text="${game.publicationDate}"></span>
+                        <span th:text="${game.formattedDate}"></span>
                     </small>
                 </div>
             </section>

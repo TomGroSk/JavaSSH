@@ -9,6 +9,7 @@ public class Comment {
     public Date timestamp;
     public String content;
     public String author;
+    public String formattedDate;
 
     public UUID getPartitionKey() {
         return partitionKey;
@@ -48,5 +49,13 @@ public class Comment {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public String getFormattedDate() {
+        return formattedDate;
+    }
+
+    public void setFormattedDate(String formattedDate) {
+        this.formattedDate = formattedDate;
     }
 }

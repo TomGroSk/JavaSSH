@@ -3,6 +3,8 @@ package pl.ssh.java.Entity;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
@@ -26,6 +28,9 @@ public class Book {
     public Date publicationDate;
 
     public Long isbn;
+
+    @Transient
+    public String formattedDate;
 
     @Transient
     public String filename;
@@ -95,5 +100,13 @@ public class Book {
 
     public void setIsbn(Long isbn) {
         this.isbn = isbn;
+    }
+
+    public String getFormattedDate() {
+        return formattedDate;
+    }
+
+    public void setFormattedDate(String formattedDate) {
+        this.formattedDate = formattedDate;
     }
 }

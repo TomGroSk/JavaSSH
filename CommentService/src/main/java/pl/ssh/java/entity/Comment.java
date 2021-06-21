@@ -5,6 +5,7 @@ import com.microsoft.azure.storage.table.TableServiceEntity;
 public class Comment extends TableServiceEntity {
     private String content;
     private String author;
+    private String formattedDate;
 
     public String getPartitionKey() {
         return partitionKey;
@@ -28,5 +29,13 @@ public class Comment extends TableServiceEntity {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public String getFormattedDate() {
+        return formattedDate;
+    }
+
+    public void setFormattedDate(String formattedDate) {
+        this.formattedDate = formattedDate;
     }
 }

@@ -10,6 +10,8 @@ import pl.ssh.moviesservice.Repository.MovieRepository;
 import pl.ssh.moviesservice.Service.MovieService;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.UUID;
 
@@ -28,13 +30,26 @@ public class MovieController {
 
     @GetMapping("/get")
     public List<Movie> getAllMovie() {
-        return movieRepository.findAll();
+        var movies =  movieRepository.findAll();
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        for (Movie m : movies) {
+            if(m.releaseDate != null)
+            {
+                m.setFormattedDate(df.format(m.releaseDate));
+            }
+        }
+        return movies;
     }
 
     @GetMapping("/get/{id}")
     public Movie getMovieById(@ModelAttribute("id") UUID id) {
         var movie = movieRepository.findById(id);
         if (movie.isPresent()) {
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+            if(movie.get().releaseDate != null)
+            {
+                movie.get().setFormattedDate(df.format(movie.get().releaseDate));
+            }
             return movie.get();
         }
 

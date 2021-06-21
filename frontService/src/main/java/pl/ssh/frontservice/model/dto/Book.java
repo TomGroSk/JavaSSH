@@ -1,7 +1,5 @@
 package pl.ssh.frontservice.model.dto;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import java.util.Date;
 import java.util.UUID;
 
@@ -19,7 +17,6 @@ public class Book {
 
     public String cover;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
     public Date publicationDate;
 
     public Long isbn;
@@ -27,6 +24,8 @@ public class Book {
     public String filename;
 
     public String fileContent;
+
+    public String formattedDate;
 
     public UUID getId() {
         return id;
@@ -90,5 +89,29 @@ public class Book {
 
     public void setIsbn(Long isbn) {
         this.isbn = isbn;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
+
+    public String getFileContent() {
+        return fileContent;
+    }
+
+    public void setFileContent(String fileContent) {
+        this.fileContent = fileContent;
+    }
+
+    public String getFormattedDate() {
+        return formattedDate;
+    }
+
+    public void setFormattedDate(String formattedDate) {
+        this.formattedDate = formattedDate;
     }
 }
